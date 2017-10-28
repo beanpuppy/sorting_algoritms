@@ -5,11 +5,10 @@ from random import random, shuffle
 
 def check_sort(numbers):
     """ Checks if the list is sorted """
-    notsorted = False
-    for i in range(len(numbers)-1):
-        if i >= numbers[i+1]:    # For ascending order
-            notsorted = True
-    return notsorted
+    for i in xrange(len(numbers)-1):
+        if numbers[i] > numbers[i+1]:
+            return True
+    return False
 
 def main():
     to_sort = []
