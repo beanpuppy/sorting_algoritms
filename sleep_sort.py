@@ -1,4 +1,8 @@
 #!/usr/bin/python
+""" Sleep sort starts a separate task for each item to be sorted, where each task 
+    sleeps for an interval corresponding to the item's sort key, then emits the item. 
+    Items are then collected sequentially in time. """
+    
 from functools import partial
 from time import sleep
 from random import random
@@ -27,4 +31,4 @@ def main():
     print("\nSorted: %s\n" % (sort))
     
 if __name__ == "__main__":
-main()
+    main()
