@@ -3,10 +3,13 @@
 
 from random import random, shuffle
 
+LIST_LENGTH = 10   # Length of the list
+NUM_VARIETY = 10   # Range of numbers that can be generated
+
 def check_sort(numbers):
     """ Checks if the list is sorted """
-    for i in xrange(len(numbers)-1):
-        if numbers[i] > numbers[i+1]:
+    for i in range(len(numbers)-1):
+        if numbers[i] > numbers[i+1]:  # For ascending order
             return True
     return False
 

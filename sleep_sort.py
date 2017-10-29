@@ -8,6 +8,9 @@ from time import sleep
 from random import random
 from multiprocessing import Pool, Manager
 
+LIST_LENGTH = 10   # Length of the list
+NUM_VARIETY = 10   # Range of numbers that can be generated
+
 def bed_time(sort, num):
     """ Function to multiprocess """
     sleep(num)
@@ -16,13 +19,12 @@ def bed_time(sort, num):
     return num
 
 def main():
-    """ Generates numbers and sorts """
     manager = Manager()
     sort = manager.list()
     unsorted = []
        
-    for i in range(10):
-        unsorted.append(int(random()*10+1))
+    for i in range(LIST_LENGTH):
+        unsorted.append(int(random()*NUM_VARIETY+1))
     print("Unsorted: %s\n" % (unsorted))
     
     func = partial(bed_time, sort)
