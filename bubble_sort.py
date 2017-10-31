@@ -8,6 +8,13 @@ from random import random
 LIST_LENGTH = 100  # Length of the list
 NUM_VARIETY = 20   # Range of numbers that can be generated
 
+def swap(array, num1, num2):
+    """ Swaps num1 and num2 (as indexes) in an array """
+    tmp = array[num1]
+    array[num1] = array[num2]
+    array[num2] = tmp
+    return array
+
 def bubble_sort(unsorted):
     swapped = True
     passes = 0
@@ -16,9 +23,7 @@ def bubble_sort(unsorted):
         passes += 1
         for i in range(len(unsorted)-1):
             if unsorted[i] > unsorted[i+1]:  # For ascending order
-                tmp = unsorted[i]
-                unsorted[i] = unsorted[i+1]
-                unsorted[i+1] = tmp
+                unsorted = swap(unsorted, i, i+1)
                 swapped = True
         print("List: %s, Passes: %s" % (unsorted, passes))
     return unsorted 
